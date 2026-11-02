@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus Best Photography Website</title>
+</head>
+
+<body>
+    <h1 class="center-align"><a href="/">Focus Best Photography Website</a></h1>
+
+    <div class="row">
+        <div class="col s3"></div>
+        <div class="col s6">
+            <h3>Register as Photographer</h3><br>
+            {% include 'includes/_messages.html' %}
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="input-field">
+                    <input type="text" id="full_name" name="full_name">
+                    <label for="full_name">Full Name</label>
+                </div>
+
+                <div class="input-field">
+                    <input type="email" id="email" name="email">
+                    <label for="email">Email address</label>
+                </div>
+
+                <div class="input-field">
+                    <input type="password" id="password" name="password">
+                    <label for="password">Password</label>
+                </div>
+
+                <div class="input-field">
+                    <input type="password" id="password2" name="password2">
+                    <label for="password2">Confirm Password</label>
+                </div>
+
+                <div class="row">
+                    <div class="col s12">
+                        <button type="submit" class="waves-effect waves-light btn black">Register</button>
+                    </div>
+                </div>
+            </form>
+
+            <p>Already have an account? <a href="{% url 'login-user' %}">Login here</a></p>
+        </div>
+        <div class="col s3"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
