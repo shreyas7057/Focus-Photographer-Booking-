@@ -26,6 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/',include('user.urls')),
 
+    path('',include('photoapp.urls')),
+
     path('',index,name='index'),
 ]
 urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
